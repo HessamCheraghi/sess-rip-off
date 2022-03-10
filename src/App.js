@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import RTL from "./components/RTL";
+import CssBaseline from "@mui/material/CssBaseline";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+//components
+import Layout from "./components/Layout";
+
+const theme = createTheme({
+  direction: "rtl",
+  typography: {
+    fontFamily: "'Vazirmatn', 'Roboto',sans-serif",
+  },
+});
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RTL>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Layout />
+      </ThemeProvider>
+    </RTL>
   );
 }
 
