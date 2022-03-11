@@ -25,7 +25,7 @@ export default function Layout() {
           </Grid>
           <Grid item xs={12} lg={6}>
             <Box sx={{ bgcolor: "#cfe8fc", height: "25vh" }}>
-              <Typography>وسط </Typography>
+              <Typography>وسط</Typography>
             </Box>
           </Grid>
           <Grid item xs={12} lg={3}>

@@ -13,7 +13,7 @@ const cacheRtl = createCache({
 export default function RTL(props) {
   return (
     <div dir="rtl">
-      <CacheProvider value={cacheRtl}>{props.children}</CacheProvider>;
+      <CacheProvider value={cacheRtl}>{props.children}</CacheProvider>
     </div>
   );
 }

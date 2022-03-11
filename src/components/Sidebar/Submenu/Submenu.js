@@ -7,12 +7,20 @@ import HourglassEmptyRoundedIcon from "@mui/icons-material/HourglassEmptyRounded
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
-export default function Submenu({ menu, menuIcon = null, submenus = [] }) {
+
+// menuIcon renderer
+const Icon = ({ type = HourglassEmptyRoundedIcon }) => {
+  const Tagname = type;
+  return <Tagname />;
+};
+
+export default function Submenu({ menu, menuIcon, submenus = [] }) {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
-    setOpen((pre) => !pre);
+    setOpen((previousState) => !previousState);
   };
+
   return (
     <>
       <ListItemButton
@@ -21,7 +29,7 @@ export default function Submenu({ menu, menuIcon = null, submenus = [] }) {
         }}
       >
         <ListItemIcon>
-          {menuIcon ? menuIcon : <HourglassEmptyRoundedIcon />}
+          <Icon type={menuIcon} />
         </ListItemIcon>
         <ListItemText primary={menu} />
         {open ? <ExpandLess /> : <ExpandMore />}
