@@ -3,13 +3,17 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
+//components
+import Header from "../Header";
+import Sidebar from "../Sidebar";
+
 export default function Layout() {
   //TODO make different layouts based on props
   return (
     <>
       <Container maxWidth="xl">
         <Box sx={{ bgcolor: "#cfe8fc", height: "25vh", marginBottom: "16px" }}>
-          <Typography>هدر</Typography>
+          <Header />
         </Box>
         <Grid
           container
@@ -17,9 +21,7 @@ export default function Layout() {
           direction={{ xs: "column-reverse", lg: "row" }} // necessary for mobile responsiveness
         >
           <Grid item xs={12} lg={3}>
-            <Box sx={{ bgcolor: "#cfe8fc", height: "25vh" }}>
-              <Typography>ساید بار سمت راست</Typography>
-            </Box>
+            <Sidebar />
           </Grid>
           <Grid item xs={12} lg={6}>
             <Box sx={{ bgcolor: "#cfe8fc", height: "25vh" }}>

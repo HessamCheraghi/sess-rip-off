@@ -8,7 +8,7 @@ import Layout from "./components/Layout";
 const theme = createTheme({
   direction: "rtl",
   typography: {
-    fontFamily: "'Vazirmatn', 'Roboto',sans-serif",
+    fontFamily: "'Vazirmatn', 'Roboto', sans-serif",
   },
 });
 function App() {
