@@ -2,27 +2,43 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
-//components
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
+import MobileMenu from "./MobileMenu";
+import { useState } from "react";
 
-export default function Layout() {
+export default function Layout({ theme }) {
   //TODO make different layouts based on props
+
+  const isDesktopViewPort = useMediaQuery(theme.breakpoints.up("lg"));
+
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const handleDrawerToggle = () => {
+    setMobileOpen((pre) => !pre);
+  };
+
   return (
     <>
+      {/* FIX this naming! */}
+      <Header handleDrawerToggle={handleDrawerToggle} />
       <Container maxWidth="xl">
-        <Box sx={{ bgcolor: "#cfe8fc", height: "25vh", marginBottom: "16px" }}>
-          <Header />
-        </Box>
         <Grid
           container
           spacing={2}
           direction={{ xs: "column-reverse", lg: "row" }} // necessary for mobile responsiveness
+          sx={{ mt: 1 }}
         >
-          <Grid item xs={12} lg={3}>
-            <Sidebar />
-          </Grid>
+          {isDesktopViewPort ? (
+            <Grid item xs={12} lg={3}>
+              <Sidebar />
+            </Grid>
+          ) : (
+            <MobileMenu
+              handleDrawerToggle={handleDrawerToggle}
+              mobileOpen={mobileOpen}
+            />
+          )}
           <Grid item xs={12} lg={6}>
             <Box sx={{ bgcolor: "#cfe8fc", height: "25vh" }}>
               <Typography>وسط</Typography>
@@ -34,7 +50,10 @@ export default function Layout() {
             </Box>
           </Grid>
         </Grid>
-        <Box sx={{ bgcolor: "#cfe8fc", height: "25vh", marginTop: "16px" }}>
+        <Box
+          component="footer"
+          sx={{ bgcolor: "#cfe8fc", height: "25vh", marginTop: "16px" }}
+        >
           <Typography>فوتر</Typography>
         </Box>
       </Container>
