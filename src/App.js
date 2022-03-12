@@ -4,8 +4,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //components
-import Layout from "./components/Layout";
-import Test from "./components/Test";
+import Home from "./pages/Home";
+import Test from "./pages/Test";
 
 const theme = createTheme({
   direction: "rtl",
@@ -20,7 +20,7 @@ function App() {
         <CssBaseline />
         <ThemeProvider theme={theme}>
           <Routes>
-            <Route path="/" element={<Layout theme={theme} />} />
+            <Route path="/" element={<Home theme={theme} />} />
             <Route path="test" element={<Test />} />
           </Routes>
         </ThemeProvider>

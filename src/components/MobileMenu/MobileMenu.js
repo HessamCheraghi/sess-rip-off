@@ -1,4 +1,4 @@
-import Sidebar from "../../Sidebar";
+import Sidebar from "../Sidebar";
 import Drawer from "@mui/material/Drawer";
 
 export default function MobileMenu({ mobileOpen, handleDrawerToggle }) {

@@ -1,12 +1,13 @@
+import { useState } from "react";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Header from "../Header";
-import Sidebar from "../Sidebar";
-import MobileMenu from "./MobileMenu";
-import { useState } from "react";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
+import MobileMenu from "../../components/MobileMenu";
+import SemesterTable from "../../components/SemesterTable";
 
 export default function Layout({ theme }) {
   //TODO make different layouts based on props
@@ -40,8 +41,8 @@ export default function Layout({ theme }) {
             />
           )}
           <Grid item xs={12} lg={6}>
-            <Box sx={{ bgcolor: "#cfe8fc", height: "25vh" }}>
-              <Typography>وسط</Typography>
+            <Box width={{ xs: "calc(100vw - 2rem)", sm: "100%" }}>
+              <SemesterTable />
             </Box>
           </Grid>
           <Grid item xs={12} lg={3}>
