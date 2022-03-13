@@ -8,6 +8,7 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import MobileMenu from "../../components/MobileMenu";
 import SemesterTable from "../../components/SemesterTable";
+import ProfileCard from "../../components/ProfileCard";
 
 export default function Layout({ theme }) {
   //TODO make different layouts based on props
@@ -30,6 +31,7 @@ export default function Layout({ theme }) {
           direction={{ xs: "column-reverse", lg: "row" }} // necessary for mobile responsiveness
           sx={{ mt: 1 }}
         >
+          {/* Menu Component TODO extract this login into it's own component. */}
           {isDesktopViewPort ? (
             <Grid item xs={12} lg={3}>
               <Sidebar />
@@ -41,14 +43,14 @@ export default function Layout({ theme }) {
             />
           )}
           <Grid item xs={12} lg={6}>
+            {/* Table Component */}
             <Box width={{ xs: "calc(100vw - 2rem)", sm: "100%" }}>
               <SemesterTable />
             </Box>
           </Grid>
+          {/* Profile Component */}
           <Grid item xs={12} lg={3}>
-            <Box sx={{ bgcolor: "#cfe8fc", height: "25vh" }}>
-              <Typography>پروفایل</Typography>
-            </Box>
+            <ProfileCard />
           </Grid>
         </Grid>
         <Box

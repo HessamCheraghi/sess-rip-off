@@ -11,11 +11,12 @@ import Typography from "@mui/material/Typography";
 import { tableHeadList, tableBodyList } from "./subjectList";
 
 export default function SemesterTable() {
-  // TODO add routes fore each row
+  // TODO add routes for each row
   return (
     <TableContainer component={Paper}>
       <Typography
-        sx={{ textAlign: "center", mb: 3, mt: 2 }}
+        gutterBottom
+        sx={{ textAlign: "center", mt: 2 }}
         id="tableTitle"
         component="div"
       >
