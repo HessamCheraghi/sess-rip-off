@@ -12,6 +12,7 @@ export default function ProfileCard() {
       sx={{
         minWidth: 275,
       }}
+      elevation={4}
     >
       <CardContent>
         <Avatar

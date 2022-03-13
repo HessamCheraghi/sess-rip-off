@@ -2,6 +2,7 @@ import Grid from "@mui/material/Grid";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Sidebar from "./Sidebar";
 import MobileMenu from "./MobileMenu";
+import Paper from "@mui/material/Paper";
 
 export default function MenuController({
   handleDrawerToggle,
@@ -13,7 +14,9 @@ export default function MenuController({
     <>
       {isDesktopViewPort ? (
         <Grid item xs={12} lg={3}>
-          <Sidebar />
+          <Paper elevation={4}>
+            <Sidebar />
+          </Paper>
         </Grid>
       ) : (
         <MobileMenu

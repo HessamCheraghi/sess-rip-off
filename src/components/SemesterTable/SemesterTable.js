@@ -13,7 +13,7 @@ import { tableHeadList, tableBodyList } from "./subjectList";
 export default function SemesterTable() {
   // TODO add routes for each row
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ mb: 2 }} elevation={4}>
       <Typography
         gutterBottom
         sx={{ textAlign: "center", mt: 2 }}
